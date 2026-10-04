@@ -26,7 +26,8 @@ jobs:
   build-and-push:
     name: Build & Push Image
     runs-on: ubuntu-latest
-    environment: ${{ inputs.environment }}
+    environment: ${{ github.event.inputs.environment }}
+    
     outputs:
       image_uri: ${{ steps.build-image.outputs.image }}
       image_tag: ${{ steps.set-tag.outputs.tag }}
